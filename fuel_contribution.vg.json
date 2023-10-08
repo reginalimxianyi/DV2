@@ -31,11 +31,11 @@
     "transform": [
       {
         "fold": [
-            "cement_co2", 
-            "coal_co2", 
-            "flaring_co2", 
-            "gas_co2", 
-            "oil_co2"
+            "cement", 
+            "coal", 
+            "flaring", 
+            "gas", 
+            "oil"
         ],
         "as": [
             "Fuel", 
@@ -63,11 +63,11 @@
         "type": "nominal",
         "scale": {
           "domain": [
-            "cement_co2", 
-            "coal_co2", 
-            "flaring_co2", 
-            "gas_co2", 
-            "oil_co2"
+            "cement", 
+            "coal", 
+            "flaring", 
+            "gas", 
+            "oil"
         ],
           "range": [
             "#e41a1c", 
