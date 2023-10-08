@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+<!-- Import pure.css -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script src="dv2.js"></script>
+</head>
+
+<style>
+  body *{
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .pure-u-1 img {
+    width: 1100px;
+    border-radius: 20px;
+  }
+
+  .pure-u-1 h1{
+    position: absolute; 
+    top: 13%;  
+    left: 17%;
+    color: white;
+    font-size: 50px;
+  }
+
+  body *{
+  font-family: 'Open Sans', sans-serif;
+}
+
+  .page {
+    width: 1100px;
+    background-color: white;
+    margin: auto;
+  }
+
+  .vis-container-left {
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .vis-container-right {
+    padding-right: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .pure-g {
+    width: 1100px;
+    border-radius: 20px;
+    background-color: rgb(245, 236, 222);
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h2 {
+    background-color: rgb(218, 158, 98);
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .pure-u-1-2 img {
+    width: 100%;     /* Make the image take the full width of the container */
+    height: auto;    /* Maintain the image's aspect ratio */
+    display: block;  /* Remove any extra space at the bottom of the image */
+}
+</style>
+
+<body> 
+  <!-- start page -->
+  <div class = page>
+
+    <!-- pure grid group -->
+    <div class = "pure-g">
+      <div class = "pure-u-1">
+        <img src = "co2_banner.jpeg"/>
+        <h1>Carbon Dioxide<br>Emission</h1>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <h2><center>Why is this Visualisation Important</center></h2>
+
+    <div class="pure-g">
+      <!-- Left Container -->
+      <div class="pure-u-1-2">
+          <img src="sustainable-development-goals.jpg"/>
+      </div>
+  
+      <!-- Right Container -->
+      <div class="pure-u-1-2">
+          <div class = "description">
+            <p>
+              In order to achieve goal 13 of the Sustainable Development Goals (SDG), where the primary focus is to take necessary action to combat climate change and its impacts, the issues surrounding excessive carbon dioxide emission of different countries must be addressed. 
+            </p>
+            <b></b>
+            <p>
+              Carbon dioxide is a significant greenhouse gas which contributes to the greenhouse effect, which results in global warming and climate changes. Global heating is an existential threat to humanity and presenting valuable information about carbon dioxide emission of different countries encourages individuals, communities, businesses and governments to adopt sustainable practices and take appropriate actions.
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <h2><center>Carbon Dioxide Emission Around the World</center></h2>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description">
+          <p>
+            This visualisation shows the emission of carbon dioxide around the world.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="choropleth_map" class="vis-container-right"></div>
+      </div>
+    </div>
+    <!-- end pusre grid group -->
+
+    <h2><center>Carbon Dioxide Emission by Fuel Type</center></h2>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="line_chart" class="vis-container-left"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description">
+          <p>
+            This visualisation shows the fuel contribution towards carbon dioxide okk.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <h2><center>Contribution of Each Fuel Source to Country's Carbon Dioxide Emission</center></h2>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class= "description">
+          <p>
+            This visualisation shows the contribution of each fuel source to country's carbon dioxide emission.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="scatter_plot" class="vis-container-right"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+    <h2><center>Annual Carbon Dioxide Emission of Countries</center></h2>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="bar_chart" class="vis-container-left"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description-">
+          <p>
+            This visualisation shows the annul carbin dioxide emission of countries.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    
+  </div>
+  <!-- end page -->
+</body>
+
+</html>
+    
