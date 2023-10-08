@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+<!-- Import pure.css -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script src="dv2.js"></script>
+</head>
+
+<style>
+  body *{
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .pure-u-1 img {
+    width: 1100px;
+    border-radius: 20px;
+  }
+
+  .pure-u-1 h1{
+    position: absolute; 
+    top: 13%;  
+    left: 17%;
+    color: white;
+    font-size: 50px;
+  }
+
+  body *{
+  font-family: 'Open Sans', sans-serif;
+}
+
+  .page {
+    width: 1100px;
+    background-color: white;
+    margin: auto;
+  }
+
+  .vis-container-left {
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .vis-container-right {
+    padding-right: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .pure-g {
+    width: 1100px;
+    border-radius: 20px;
+    background-color: rgb(245, 236, 222);
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px;
+  }
+
+  h2 {
+    background-color: rgb(218, 158, 98);
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .pure-u-1-2 img {
+    width: 100%;     /* Make the image take the full width of the container */
+    height: auto;    /* Maintain the image's aspect ratio */
+    display: block;  /* Remove any extra space at the bottom of the image */
+}
+</style>
+
+<body> 
+  <!-- start page -->
+  <div class = page>
+
+    <!-- pure grid group -->
+    <div class = "pure-g">
+      <div class = "pure-u-1">
+        <img src = "co2_banner.jpeg"/>
+        <h1>Carbon Dioxide<br>Emission</h1>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <h2><center>Why is this Visualisation Important</center></h2>
+
+    <div class="pure-g">
+      <!-- Left Container -->
+      <div class="pure-u-1-2">
+          <img src="sustainable-development-goals.jpg"/>
+      </div>
+  
+      <!-- Right Container -->
+      <div class="pure-u-1-2">
+          <div class = "description">
+            <p>
+              In order to achieve <span style = "color : rgb(22, 117, 78)"><b>Goal 13</b></span> of the <span style = "color : rgb(22, 117, 78)"><b>Sustainable Development Goals (SDG)</b></span>, where the primary focus is to take necessary action to combat climate change and its impacts, the issues surrounding excessive carbon dioxide emission of different countries must be addressed. 
+            </p>
+            <b></b>
+            <p>
+              <b>Carbon dioxide</b> is a significant greenhouse gas which contributes to the greenhouse effect, which results in <b>global warming</b> and <b>climate changes</b>. Global heating is an existential threat to humanity and presenting valuable information about carbon dioxide emission of different countries encourages individuals, communities, businesses and governments to <b>adopt sustainable practices</b> and <b>take appropriate actions</b>.
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <h2><center>Carbon Dioxide Emission Around the World</center></h2>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description">
+          <p>
+            Based on the choropleth map which visualizes <b>carbon dioxide emissions by countries</b> which is shown on the right, countries that are highest and lowest emitters of carbon dioxide can be discerned easily. The countries are shaded based on its carbon dioxide emission levels, with darker shades indicating higher emissions and lighter shades indicating lower emissions. 
+          </p>  
+          <b></b>
+          <p>
+            It is evident that the visualisation underscores the <b>global disparities</b> in carbon dioxide emissions, and quick comprehensions of which country are <b>major contributors</b> to carbon dioxide levels can be made. This encourages international cooperation to address challenges of climate change.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="choropleth_map" class="vis-container-right"></div>
+      </div>
+    </div>
+    <!-- end pusre grid group -->
+
+    <h2><center>Carbon Dioxide Emission by Fuel Type</center></h2>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="line_chart" class="vis-container-left"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description">
+          <p>
+            The line chart on the left visualizes <b>carbon dioxide emissions over the years</b> based on different fuel types which are <b>cement</b>, <b>coal</b>, <b>flaring</b>, <b>gas</b> and <b>oil</b>.
+          </p>
+          <b></b>
+          <p>
+            This visualisation allows deeper understanding on carbon footprint in countries and its primary contributors. 
+            It can be observed that <b>coal</b> is the <b>primary contributor</b> of carbon dioxide emission in most countries.
+          </p>
+          <p>
+            Policymakers, researchers and environmentalists are able to utilise this data to prioritise interventions so that efforts could be channeled to reduce fuel emissions that have significant contributions.
+            Public awareness about the primary contributor of carbon dioxide emission in the country can be raised which can influence public behaviour towards more sustainable choices.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <h2><center>Contribution of Each Fuel Source to Country's Carbon Dioxide Emission</center></h2>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class= "description">
+          <p>
+            explanation to be added
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="scatter_plot" class="vis-container-right"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <h2><center>Annual Carbon Dioxide Emission of Countries</center></h2>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="bar_chart" class="vis-container-left"></div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="description">
+          <p>
+            The interactive bar chart on the left visualises the <b>annual carbon dioxide from year 2000 to 2018</b> for <span style = "color : #e41a1c"><b>Australia</b></span>, <span style = "color : #984ea3"><b>Malaysia</b></span>, <span style = "color : #ff7f00"><b>Italy</b></span>, <span style = "color : #a6cee3"><b>Indonesia</b></span> and <span style = "color : #377eb8"><b>India</b></span>. 
+          </p>
+          <p>
+            It can be observed that the carbon dioxide emission of Australia, India, Indonesia and Malaysia have increased over the years. However, the emission of carbon dioxide in India increases at a significantly larger rate compared to the other countries. On the other hand, the emission of carbon dioxide in Italy has decreased over the years. 
+          </p>
+          <p>
+            The increment in carbon dioxide levels could be due to natural factors and human-induced activities.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    
+  </div>
+  <!-- end page -->
+</body>
+
+</html>
+    
