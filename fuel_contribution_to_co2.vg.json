@@ -20,15 +20,15 @@
       },
       {
         "name": "fuelType",
-        "value": "coal_co2",
+        "value": "coal",
         "bind": {
           "input": "select",
           "options": [
-            "coal_co2", 
-            "gas_co2", 
-            "oil_co2", 
-            "cement_co2", 
-            "flaring_co2"
+            "coal", 
+            "gas", 
+            "oil", 
+            "cement", 
+            "flaring"
           ],
           "labels": [
             "Coal CO2", 
