@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 380,
+    "width": 560,
     "height": 300,
+    "title": "Total Carbon Dioxide Emissions, Fuel Type and Population",
     "background" : "rgb(245, 236, 222)",
     "data": {
       "url": "https://raw.githubusercontent.com/reginalimxianyi/DV2/main/co2_filtered_countries.csv"
@@ -20,15 +21,15 @@
       },
       {
         "name": "fuelType",
-        "value": "coal",
+        "value": "Coal",
         "bind": {
           "input": "select",
           "options": [
-            "coal", 
-            "gas", 
-            "oil", 
-            "cement", 
-            "flaring"
+            "Coal", 
+            "Gas", 
+            "Oil", 
+            "Cement", 
+            "Flaring"
           ],
           "labels": [
             "Coal", 
@@ -48,12 +49,12 @@
         "as": "selectedFuelCO2"
       },
       {
-        "filter": "datum.year == Year_selection"
+        "filter": "datum.Year == Year_selection"
       }
     ],
     "encoding": {
       "x": {
-        "field": "co2",
+        "field": "Co2",
         "type": "quantitative",
         "title": "Total CO2 Emission (in million tonnes)"
       },
@@ -63,7 +64,7 @@
         "title": "Emission from Selected Fuel (in million tonnes)"
       },
       "color": {
-        "field": "country", 
+        "field": "Country", 
         "type": "nominal", 
         "scale": {
             "domain": [
@@ -77,14 +78,14 @@
                 "#e41a1c",
                 "#984ea3",
                 "#ff7f00",
-                "#a6cee3",
+                "#65cbfc",
                 "#377eb8",
                 "#a65628"
             ]
         }
       },
       "size": {
-        "field": "population",
+        "field": "Population",
         "type": "quantitative",
         "scale": {
             "type": "threshold",
@@ -107,8 +108,8 @@
           "legend": {"format": ".1s"}
       },
       "tooltip": [
-        {"field": "country", "type": "nominal", "title": "Country"},
-        {"field": "year", "type": "quantitative", "title": "Year"},
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Year", "type": "quantitative", "title": "Year"},
         {"field": "selectedFuelCO2", "type": "quantitative", "title": "Emissions from Selected Fuel"}
       ]
     },
