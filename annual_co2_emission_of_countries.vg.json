@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
+    "width": 600,
     "height": 300,
+    "title": "Annual Carbon Dioxide Emission of Countries",
     "background" : "rgb(245, 236, 222)",
     "data": {"url": "https://raw.githubusercontent.com/reginalimxianyi/DV2/main/co2_filtered_countries.csv"},
     "params": [
@@ -21,7 +22,7 @@
         {
         "transform": [
             {
-                "filter": "datum.year == Year_selection"
+                "filter": "datum.Year == Year_selection"
             }
         ],
         "mark": {
@@ -29,7 +30,7 @@
         },
         "encoding": {
             "x": {
-                "field": "country", 
+                "field": "Country", 
                 "title": "Country", 
                 "type":"nominal",
                 "axis": {
@@ -37,13 +38,13 @@
                 }
             },
             "y": {
-                "field": "co2", 
+                "field": "Co2", 
                 "title": "CO2 Emission (in million tonnes)", 
                 "type":"quantitative", 
                 "scale":{"domain":[0, 2800]}
             },
             "color": {
-                "field": "country", 
+                "field": "Country", 
                 "type": "nominal", 
                 "scale": {
                     "domain": [
@@ -57,16 +58,15 @@
                         "#e41a1c",
                         "#984ea3",
                         "#ff7f00",
-                        "#a6cee3",
-                        "#377eb8",
-                        "#a65628"
+                        "#65cbfc",
+                        "#377eb8"
                     ]
                 }
             },
             "tooltip": [
-                {"field": "year", "type": "ordinal", "title": "Year"},
-                {"field": "country", "type": "nominal", "title": "Country"},
-                {"field": "co2", "type": "quantitative", "title": "co2"}
+                {"field": "Year", "type": "ordinal", "title": "Year"},
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Co2", "type": "quantitative", "title": "co2"}
             ]
         }
         }
