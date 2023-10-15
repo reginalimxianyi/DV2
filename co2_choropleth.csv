@@ -1,4 +1,4 @@
-"","country","population","year","co2_per_capita","co2","cement_co2","coal_co2","flaring_co2","gas_co2","oil_co2","co2_normalised"
+"","country","population","year","Co2 Emission Per Capita","co2","cement_co2","coal_co2","flaring_co2","gas_co2","oil_co2","co2_normalised"
 "1","Afghanistan",36686788,2018,0.295,10.818,0.057,3.847,0,0.293,6.621,2.94874547207567e-07
 "2","Africa",1295265310,2018,1.055,1366.411,80.124,418.017,59.245,287.462,521.562,1.054927503617e-06
 "3","Albania",2877019,2018,1.732,4.984,1.017,0.473,0.014,0.15,3.331,1.73234865671725e-06
